@@ -54,6 +54,17 @@ mkdir -p genome/hg38_rRNA_index
 hisat2-build genome/hg38_rRNA.fa genome/hg38_rRNA_index/hg38_rRNA
 ```
 
+#### 2. Edit one table file including m6A/MeRIP-seq sample information
+
+The table file is consisted of 19 fields, which records basic information of samples such as their file names, file paths, library types, etc. One row for one sample. Here is an example
+
+| Species | Cell Line | Dataset | Sample | Group | File Name | Fastq File Dir | Fastq File | Bam File Path | 5’ Adapter | 3’ Adapter | 5’ Barcode | 3’ Barcode | Q33 | Strandness | Fragment Length | Read Length | Seq Layout | ID |
+|---------|-----------|---------|----------------|-----------------|----------------------|--------------------------|--------------------------------|----------------------------------------------|------------|------------|------------|------------|-----|------------|-----------------|-------------|------------|----|
+| human | HeLa | - | siControl_rep1 | control_input | input_siControl_rep1 | /your/raw/data/file/path | input_siControl_chr22.fastq.gz | /your/bam/file/path/input_siControl_rep1.bam | - | - | - | - | N | R | 150 | 50 | SINGLE | 1 |
+| human | HeLa | - | siControl_rep1 | control_ip | ip_siControl_rep1 | /your/raw/data/file/path | ip_siControl_chr22.fastq.gz | /your/bam/file/path/ip_siControl_rep1.bam | - | - | - | - | N | R | 150 | 50 | SINGLE | 2 |
+| human | HeLa | - | siMETTL3_rep1 | treatment_input | input_siMETTL3_rep1 | /your/raw/data/file/path | input_siMETTL3_chr22.fastq.gz | /your/bam/file/path/input_siMETTL3_rep1.bam | - | - | - | - | N | R | 150 | 50 | SINGLE | 3 |
+| human | HeLa | - | siMETTL3_rep1 | treatment_ip | ip_siMETTL3_rep1 | /your/raw/data/file/path | ip_siMETTL3_chr22.fastq.gz | /your/bam/file/path/ip_siMETTL3_rep1.bam | - | - | - | - | N | R | 150 | 50 | SINGLE | 4 |
+
 ```
 single job mode (call peaks):
 
