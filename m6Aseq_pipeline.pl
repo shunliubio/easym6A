@@ -159,6 +159,7 @@ sub workFlowPrint {
 	my $peak_out_dir;
 	my $genome_fasta_file;
 	open INPUT,"<$configure_file" or die "Can't open $configure_file:$!";
+	<INPUT>;
 	while (my $line=<INPUT>) {
 		chomp($line);
 		my @line=split /\t/,$line;
@@ -1577,8 +1578,8 @@ batch job mode:
 $ m6Aseq_workflow.pl -s <sampleList.txt> -b <batchList.txt> -x <1> -y <10> [options]
 
  Options:
-   -h/--help                   brief help message
-   --man                       full documentation
+   -h/--help                   brief help message.
+   --man                       full documentation.
    -s/--samplelist <file>      a specific-formated file that records sample infomation. (Required)
    -c/--configure <file>       a specific-formated file that records ouput path. (Requried)
    -n/--sampleno <string>      a comma-seperated ID list of samples that you want to analyze. (Required)
@@ -1590,6 +1591,7 @@ $ m6Aseq_workflow.pl -s <sampleList.txt> -b <batchList.txt> -x <1> -y <10> [opti
    -x/--bstart <int>           batch start ID. Required when -b/--batch is set. Used together with -y/--bend.
    -y/--bend <int>             batch end ID. Required when -b/--batch is set. Used together with -x/--bstart.
    -a/--onlybam                run gene expression analysis only. like RNA-seq pipleline. (Default: off)
+   -u/--daq                    trigger gene expression quantification in both of samples. (Default: off)
    -k/--onlypeak               run peak calling analysis only. (Default: off)
    -p/--rmrep                  remove repetitive elements. (Default: off)
    -d/--rmdup                  remove PCR duplicates. (Default: off)
