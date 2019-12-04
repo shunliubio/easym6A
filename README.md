@@ -5,6 +5,8 @@
 
 easym6A creates a bash script to process m6A/MeRIP-seq data from adapter trimming to peak calling. It can also serve as a pipeline for RNA-seq data.
 
+![easym6A_workflow.png](./easym6A_workflow.png)
+
 ## Dependencies:
 
 - **Cutadapt**, tested with 1.15
@@ -119,7 +121,7 @@ The configuration file contains only two columns and 12 rows. The first column i
 - **peak_out_dir:** Set a directory for peak callling resutls. De novo motif enrichment analysis results are also in the directory.
 - **genome_fasta_file:** The path of a genome sequence file in fasta format. Downloaded in UCSC or Ensembl. Used in bedtools.
 
-### 4. Using easym6A
+### 4. Use easym6A
 
 easym6A is a Perl script used to generate a specific bash script to process the m6A/MeRIP-seq data.
 
