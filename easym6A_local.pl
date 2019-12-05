@@ -944,9 +944,9 @@ echo -e \"\\npeak calling -- $tool\\n\"
 echo -e \"\\n\$compare\\n\"
 if [[ ! -d \$peak_out_dir/\$compare/$tool/plus ]];then mkdir -p \$peak_out_dir/\$compare/$tool/plus;fi
 if [[ ! -d \$peak_out_dir/\$compare/$tool/minus ]];then mkdir -p \$peak_out_dir/\$compare/$tool/minus;fi
-3peakSuite.r $tool \$gtf_file \$peak_out_dir/\$compare/$tool plus \$fragment_length \$read_length \$hisat2_out_bam_input_plus \$hisat2_out_bam_ip_plus > \\
+3peakSuite.R $tool \$gtf_file \$peak_out_dir/\$compare/$tool plus \$fragment_length \$read_length \$hisat2_out_bam_input_plus \$hisat2_out_bam_ip_plus > \\
 	\$peak_out_dir/\$compare/$tool/run.plus.log 2>&1 &
-3peakSuite.r $tool \$gtf_file \$peak_out_dir/\$compare/$tool minus \$fragment_length \$read_length \$hisat2_out_bam_input_minus \$hisat2_out_bam_ip_minus > \\
+3peakSuite.R $tool \$gtf_file \$peak_out_dir/\$compare/$tool minus \$fragment_length \$read_length \$hisat2_out_bam_input_minus \$hisat2_out_bam_ip_minus > \\
 	\$peak_out_dir/\$compare/$tool/run.minus.log 2>&1
 wait
 ";
@@ -973,7 +973,7 @@ done";
 echo -e \"\\npeak calling -- $tool\\n\"
 echo -e \"\\n\$compare\\n\"
 if [[ ! -d \$peak_out_dir/\$compare/$tool ]];then mkdir -p \$peak_out_dir/\$compare/$tool;fi
-3peakSuite.r $tool \$gtf_file \$peak_out_dir/\$compare $tool \$fragment_length \$read_length \$hisat2_out_bam_input \$hisat2_out_bam_ip > \\
+3peakSuite.R $tool \$gtf_file \$peak_out_dir/\$compare $tool \$fragment_length \$read_length \$hisat2_out_bam_input \$hisat2_out_bam_ip > \\
 	\$peak_out_dir/\$compare/$tool/run.log 2>&1
 ";
 	} else {
@@ -1502,9 +1502,9 @@ echo -e \"\\npeak calling -- $tool\\n\"
 echo -e \"\\n\$compare\\n\"
 if [[ ! -d \$peak_out_dir/\$compare/$tool/plus ]];then mkdir -p \$peak_out_dir/\$compare/$tool/plus;fi
 if [[ ! -d \$peak_out_dir/\$compare/$tool/minus ]];then mkdir -p \$peak_out_dir/\$compare/$tool/minus;fi
-3peakSuite.r $tool \$gtf_file \$peak_out_dir/\$compare/$tool plus \$fragment_length \$read_length \$hisat2_out_bam_control_input_plus \$hisat2_out_bam_control_ip_plus \\
+3peakSuite.R $tool \$gtf_file \$peak_out_dir/\$compare/$tool plus \$fragment_length \$read_length \$hisat2_out_bam_control_input_plus \$hisat2_out_bam_control_ip_plus \\
 	\$hisat2_out_bam_treatment_input_plus \$hisat2_out_bam_treatment_ip_plus > \$peak_out_dir/\$compare/$tool/run.plus.log 2>&1 &
-3peakSuite.r $tool \$gtf_file \$peak_out_dir/\$compare/$tool minus \$fragment_length \$read_length \$hisat2_out_bam_control_input_minus \$hisat2_out_bam_control_ip_minus \\
+3peakSuite.R $tool \$gtf_file \$peak_out_dir/\$compare/$tool minus \$fragment_length \$read_length \$hisat2_out_bam_control_input_minus \$hisat2_out_bam_control_ip_minus \\
 	\$hisat2_out_bam_treatment_input_minus \$hisat2_out_bam_treatment_ip_minus > \$peak_out_dir/\$compare/$tool/run.minus.log 2>&1
 wait
 ";
@@ -1531,7 +1531,7 @@ done";
 echo -e \"\\npeak calling -- $tool\\n\"
 echo -e \"\\n\$compare\\n\"
 if [[ ! -d \$peak_out_dir/\$compare/$tool ]];then mkdir -p \$peak_out_dir/\$compare/$tool;fi
-3peakSuite.r $tool \$gtf_file \$peak_out_dir/\$compare $tool \$fragment_length \$read_length \$hisat2_out_bam_control_input \$hisat2_out_bam_control_ip \\
+3peakSuite.R $tool \$gtf_file \$peak_out_dir/\$compare $tool \$fragment_length \$read_length \$hisat2_out_bam_control_input \$hisat2_out_bam_control_ip \\
 	\$hisat2_out_bam_treatment_input \$hisat2_out_bam_treatment_ip > \$peak_out_dir/\$compare/$tool/run.log 2>&1
 ";
 	} else {
