@@ -26,8 +26,9 @@ easym6A creates a bash script to process m6A/MeRIP-seq data from adapter trimmin
 
 Add paths of executable programs of above dependencies, easym6A.pl and 3peakSuit.R to PATH. Assume that their paths are listed as follows:
 
-| Cutadapt  | ~/.local/bin  |
+| Software  | Path  |
 |------------------ |------------------------------------------ |
+| Cutadapt  | ~/.local/bin  |
 | Samtools  | /software/samtools-1.7/bin  |
 | HISAT2  | /software/hisat2-2.1.0  |
 | Picard  | /software/picard-2.17.10  |
@@ -271,7 +272,7 @@ dup <- F
 
 #### Difference between `easym6A_slurm.pl` and `easym6A_local.pl`
 
-`easym6A_slurm.pl` is used for computer clusters where [Slurm](https://slurm.schedmd.com) is installed. Options for Slurm can be specified in Line 229 to 234 of the script. Change option values in these lines, delet some of these lines, or add new lines about Slurm parameter declaration are available in order to meet with the running requirement of your programes. `easym6A_local.pl` is used for local servers without Slurm installation. It calls `nohup` to run the data analysis in the background.
+`easym6A_slurm.pl` is used for computer clusters where [Slurm](https://slurm.schedmd.com) is installed. Options for Slurm can be specified in Line 229 to 234 of the script. Change option values in these lines, delet some of these lines, or add new lines about Slurm parameter declaration are available in order to meet with the running requirement of your programes.
 
 ```bash
 #SBATCH --job-name=m6Aseq
@@ -281,3 +282,6 @@ dup <- F
 #SBATCH --ntasks-per-node=24
 #SBATCH --mem-per-cpu=2000
 ```
+
+`easym6A_local.pl` is used for local servers without Slurm installation. It calls `nohup` to run the data analysis in the background.
+
