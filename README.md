@@ -24,7 +24,49 @@ easym6A creates a bash script to process m6A/MeRIP-seq data from adapter trimmin
 
 ## Installation:
 
-Add executable directories of above dependencies, easym6A.pl and 3peakSuit.R to PATH.
+Add paths of executable programs of above dependencies, easym6A.pl and 3peakSuit.R to PATH. Assume that their paths are listed as follows:
+
+| Cutadapt  | ~/.local/bin  |
+|------------------ |------------------------------------------ |
+| Samtools  | /software/samtools-1.7/bin  |
+| HISAT2  | /software/hisat2-2.1.0  |
+| Picard  | /software/picard-2.17.10  |
+| bedtools  | /software/bedtools-2.27.1/bin   |
+| bedGraphToBigWig  | /software/ucsc  |
+| StringTie   | /software/stringtie-1.3.4d.Linux_x86_64   |
+| prepDE.py   | /software/stringtie-1.3.4d.Linux_x86_64   |
+| gffcompare  | /software/gffcompare-0.10.4.Linux_x86_64  |
+| MACS2   | ~/.local/bin  |
+| HOMER   | /software/homer-4.9/bin   |
+| R   | /software/R-3.5.1-el7-x86_64/bin  |
+| easym6A.pl  | /software/easym6A   |
+| 3peakSuit.R   | /software/easym6A   |
+
+Here is an example of appending them in `~/.bash_profile` or `~/.profile`.
+
+```bash
+PATH=~/.local/bin:/software/samtools-1.7/bin:/software/hisat2-2.1.0:/software/picard-2.17.10:/software/bedtools-2.27.1/bin:/home/shunliu/software/ucsc:/software/stringtie-1.3.4d.Linux_x86_64:/software/gffcompare-0.10.4.Linux_x86_64:/software/homer-4.9/bin:/software/R-3.5.1-el7-x86_64/bin:/software/easym6A:$PATH
+
+export PATH
+```
+
+Note that Line 1 and 8 of 3peakSuit.R are the paths of Rscript and installed packages, respetively. They are also required to be consistent with R related environment variables.
+
+#### 3peakSuit.R Line 1
+
+Modify `/software/R-3.3-el7-x86_64/bin/Rscript` to meet with the path of Rscript.
+
+```R
+#!/usr/bin/env /software/R-3.3-el7-x86_64/bin/Rscript
+```
+
+#### 3peakSuit.R Line 8
+
+Modify `/software/R-3.3-el7-x86_64/lib64/R/library` to meet with the path of the R library where exomePeak, MeTPeak and MeTDiff are located.
+
+```R
+.libPaths("/software/R-3.3-el7-x86_64/lib64/R/library")
+```
 
 ## Usage:
 
@@ -212,8 +254,30 @@ A table file including batch job information is consisted of five fields. Here i
 
 #### Options for peak calling
 
-Options for peak calling are specified in Line 19 to 28 of `3peakSuit.R`. Modify these options before using `easym6A.pl`. Note that paths in Line 1 and 8 are also required to be consistent with current environment variables of R.
+Options for peak calling are specified in Line 19 to 28 of `3peakSuit.R`. Modify these options before using `easym6A.pl`.
+
+```R
+peak_cutoff_pvalue <- 1e-3
+peak_cutoff_fdr <- 0.05
+window_width <- 50
+sliding_step <- 10
+minimal_mapq <- 20
+fold_enrichment <- 2
+diff_peak_cutoff_fdr <- 0.1
+diff_peak_abs_fold_change <- 1.5
+diff_peak_consistent_abs_fold_change <- 1.5
+dup <- F
+```
 
 #### Difference between `easym6A_slurm.pl` and `easym6A_local.pl`
 
-`easym6A_slurm.pl` is used for computer clusters where [Slurm](https://slurm.schedmd.com) is installed. Options for Slurm can be specified in Line 229 to 234 of the script. `easym6A_local.pl` is used for local servers without Slurm installation. It calls `nohup` to run the data analysis in the background.
+`easym6A_slurm.pl` is used for computer clusters where [Slurm](https://slurm.schedmd.com) is installed. Options for Slurm can be specified in Line 229 to 234 of the script. Change option values in these lines, delet some of these lines, or add new lines about Slurm parameter declaration are available in order to meet with the running requirement of your programes. `easym6A_local.pl` is used for local servers without Slurm installation. It calls `nohup` to run the data analysis in the background.
+
+```bash
+#SBATCH --job-name=m6Aseq
+#SBATCH --output=$bash_log_dir/$run_name.log
+#SBATCH --time=36:00:00
+#SBATCH --partition=broadwl
+#SBATCH --ntasks-per-node=24
+#SBATCH --mem-per-cpu=2000
+```
