@@ -39,14 +39,14 @@ Add paths of executable programs of above dependencies, easym6A.pl and 3peakSuit
 | gffcompare  | ~/software/gffcompare-0.10.4.Linux_x86_64  |
 | MACS2   | ~/.local/bin  |
 | HOMER   | ~/software/homer-4.9/bin   |
-| R   | ~/software/R-3.5.1-el7-x86_64/bin  |
+| R   | ~/software/R-3.3-el7-x86_64/bin  |
 | easym6A.pl  | ~/software/easym6A   |
 | 3peakSuit.R   | ~/software/easym6A   |
 
 Here is an example of appending them in `~/.bash_profile` or `~/.profile`.
 
 ```bash
-PATH=~/.local/bin:~/software/samtools-1.7/bin:~/software/hisat2-2.1.0:~/software/picard-2.17.10:~/software/bedtools-2.27.1/bin:~/home/shunliu/software/ucsc:~/software/stringtie-1.3.4d.Linux_x86_64:~/software/gffcompare-0.10.4.Linux_x86_64:~/software/homer-4.9/bin:~/software/R-3.5.1-el7-x86_64/bin:~/software/easym6A:$PATH
+PATH=~/.local/bin:~/software/samtools-1.7/bin:~/software/hisat2-2.1.0:~/software/picard-2.17.10:~/software/bedtools-2.27.1/bin:~/home/shunliu/software/ucsc:~/software/stringtie-1.3.4d.Linux_x86_64:~/software/gffcompare-0.10.4.Linux_x86_64:~/software/homer-4.9/bin:~/software/R-3.3-el7-x86_64/bin:~/software/easym6A:$PATH
 
 export PATH
 ```
