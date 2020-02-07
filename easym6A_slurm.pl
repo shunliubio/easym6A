@@ -78,8 +78,10 @@ while (my $line=<IN>) {
 	my @line=split /\t/,$line;
 	$fileName{$line[18]}=$line[5];
 	$fileDir{$line[5]}=$line[6];
+	$fileDir{$line[5]}=~s/^~/$ENV{HOME}/;
 	$fqFile{$line[5]}=$line[7];
 	$bamFile{$line[5]}=$line[8];
+	$bamFile{$line[5]}=~s/^~/$ENV{HOME}/;
 	$adapter5{$line[5]}=$line[9];
 	$adapter3{$line[5]}=$line[10];
 	$barcode5{$line[5]}=$line[11];
@@ -165,28 +167,39 @@ sub workFlowPrint {
 		my @line=split /\t/,$line;
 		if ($line[0] eq "bash_log_dir") {
 			$bash_log_dir=$line[1];
+			$bash_log_dir=~s/^~/$ENV{HOME}/;
 		} elsif ($line[0] eq "cutadapt_out_dir") {
 			$cutadapt_out_dir=$line[1];
+			$cutadapt_out_dir=~s/^~/$ENV{HOME}/;
 		} elsif ($line[0] eq "hisat2_index_repBase") {
 			$hisat2_index_repBase=$line[1];
+			$hisat2_index_repBase=~s/^~/$ENV{HOME}/;
 		} elsif ($line[0] eq "hisat2_index_genome") {
 			$hisat2_index_genome=$line[1];
+			$hisat2_index_genome=~s/^~/$ENV{HOME}/;
 		} elsif ($line[0] eq "hisat2_out_dir") {
 			$hisat2_out_dir=$line[1];
+			$hisat2_out_dir=~s/^~/$ENV{HOME}/;
 		} elsif ($line[0] eq "stringtie_out_dir") {
 			$stringtie_out_dir=$line[1];
+			$stringtie_out_dir=~s/^~/$ENV{HOME}/;
 		} elsif ($line[0] eq "chrom_size") {
 			$chrom_size=$line[1];
+			$chrom_size=~s/^~/$ENV{HOME}/;
 		} elsif ($line[0] eq "transcriptome_size") {
 			$tx_size=$line[1];
 		} elsif ($line[0] eq "gtf_file") {
 			$gtf_file=$line[1];
+			$gtf_file=~s/^~/$ENV{HOME}/;
 		} elsif ($line[0] eq "bed12_file") {
 			$bed12_file=$line[1];
+			$bed12_file=~s/^~/$ENV{HOME}/;
 		} elsif ($line[0] eq "peak_out_dir") {
 			$peak_out_dir=$line[1];
+			$peak_out_dir=~s/^~/$ENV{HOME}/;
 		} elsif ($line[0] eq "genome_fasta_file") {
 			$genome_fasta_file=$line[1];
+			$genome_fasta_file=~s/^~/$ENV{HOME}/;
 		}
 	}
 	close INPUT;

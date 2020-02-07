@@ -1,0 +1,5 @@
+Species	Cellline	Dataset	Sample	Group	File Name	Fastq File Dir	fastq File	bam File Path	5' Adapter	3' Adapter	5' Barcode	3' Barcode	Q33	Strandness	Fragment Length	Read Length	Seq Layout	ID
+human	HEC-1-A	-	siControl_rep1	control_input	input_siControl_rep1	~/analysis/test/easym6A/data	input_siControl_chr22.fastq.gz	-	-	-	-	-	N	R	150	50	SINGLE	1
+human	HEC-1-A	-	siControl_rep1	control_ip	ip_siControl_rep1	~/analysis/test/easym6A/data	ip_siControl_chr22.fastq.gz	-	-	-	-	-	N	R	150	50	SINGLE	2
+human	HEC-1-A	-	siMETTL3_rep1	treatment_input	input_siMETTL3_rep1	~/analysis/test/easym6A/data	input_siMETTL3_chr22.fastq.gz	-	-	-	-	-	N	R	150	50	SINGLE	3
+human	HEC-1-A	-	siMETTL3_rep1	treatment_ip	ip_siMETTL3_rep1	~/analysis/test/easym6A/data	ip_siMETTL3_chr22.fastq.gz	-	-	-	-	-	N	R	150	50	SINGLE	4

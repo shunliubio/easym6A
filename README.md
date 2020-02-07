@@ -29,24 +29,24 @@ Add paths of executable programs of above dependencies, easym6A.pl and 3peakSuit
 | Software  | Path  |
 |------------------ |------------------------------------------ |
 | Cutadapt  | ~/.local/bin  |
-| Samtools  | /software/samtools-1.7/bin  |
-| HISAT2  | /software/hisat2-2.1.0  |
-| Picard  | /software/picard-2.17.10  |
-| bedtools  | /software/bedtools-2.27.1/bin   |
-| bedGraphToBigWig  | /software/ucsc  |
-| StringTie   | /software/stringtie-1.3.4d.Linux_x86_64   |
-| prepDE.py   | /software/stringtie-1.3.4d.Linux_x86_64   |
-| gffcompare  | /software/gffcompare-0.10.4.Linux_x86_64  |
+| Samtools  | ~/software/samtools-1.7/bin  |
+| HISAT2  | ~/software/hisat2-2.1.0  |
+| Picard  | ~/software/picard-2.17.10  |
+| bedtools  | ~/software/bedtools-2.27.1/bin   |
+| bedGraphToBigWig  | ~/software/ucsc  |
+| StringTie   | ~/software/stringtie-1.3.4d.Linux_x86_64   |
+| prepDE.py   | ~/software/stringtie-1.3.4d.Linux_x86_64   |
+| gffcompare  | ~/software/gffcompare-0.10.4.Linux_x86_64  |
 | MACS2   | ~/.local/bin  |
-| HOMER   | /software/homer-4.9/bin   |
-| R   | /software/R-3.5.1-el7-x86_64/bin  |
-| easym6A.pl  | /software/easym6A   |
-| 3peakSuit.R   | /software/easym6A   |
+| HOMER   | ~/software/homer-4.9/bin   |
+| R   | ~/software/R-3.5.1-el7-x86_64/bin  |
+| easym6A.pl  | ~/software/easym6A   |
+| 3peakSuit.R   | ~/software/easym6A   |
 
 Here is an example of appending them in `~/.bash_profile` or `~/.profile`.
 
 ```bash
-PATH=~/.local/bin:/software/samtools-1.7/bin:/software/hisat2-2.1.0:/software/picard-2.17.10:/software/bedtools-2.27.1/bin:/home/shunliu/software/ucsc:/software/stringtie-1.3.4d.Linux_x86_64:/software/gffcompare-0.10.4.Linux_x86_64:/software/homer-4.9/bin:/software/R-3.5.1-el7-x86_64/bin:/software/easym6A:$PATH
+PATH=~/.local/bin:~/software/samtools-1.7/bin:~/software/hisat2-2.1.0:~/software/picard-2.17.10:~/software/bedtools-2.27.1/bin:~/home/shunliu/software/ucsc:~/software/stringtie-1.3.4d.Linux_x86_64:~/software/gffcompare-0.10.4.Linux_x86_64:~/software/homer-4.9/bin:~/software/R-3.5.1-el7-x86_64/bin:~/software/easym6A:$PATH
 
 export PATH
 ```
@@ -55,18 +55,18 @@ Note that Line 1 and 8 of 3peakSuit.R are the paths of Rscript and installed pac
 
 #### 3peakSuit.R Line 1
 
-Modify `/software/R-3.3-el7-x86_64/bin/Rscript` to meet with the path of Rscript.
+Modify `~/software/R-3.3-el7-x86_64/bin/Rscript` to meet with the path of Rscript.
 
 ```R
-#!/usr/bin/env /software/R-3.3-el7-x86_64/bin/Rscript
+#!/usr/bin/env ~/software/R-3.3-el7-x86_64/bin/Rscript
 ```
 
 #### 3peakSuit.R Line 8
 
-Modify `/software/R-3.3-el7-x86_64/lib64/R/library` to meet with the path of the R library where exomePeak, MeTPeak and MeTDiff are located.
+Modify `~/software/R-3.3-el7-x86_64/lib64/R/library` to meet with the path of the R library where exomePeak, MeTPeak and MeTDiff are located.
 
 ```R
-.libPaths("/software/R-3.3-el7-x86_64/lib64/R/library")
+.libPaths("~/software/R-3.3-el7-x86_64/lib64/R/library")
 ```
 
 ## Usage:

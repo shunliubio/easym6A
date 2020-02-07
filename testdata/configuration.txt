@@ -1,0 +1,13 @@
+Field	Path
+bash_log_dir	~/analysis/test/easym6A
+cutadapt_out_dir	~/analysis/test/easym6A/cutadapt
+hisat2_index_repBase	~/genomes/human/GRCh38/HISAT2_rRNA_index/rRNA
+hisat2_index_genome	~/genomes/human/GRCh38/HISAT2_v27_index/GRCh38_tran
+hisat2_out_dir	~/analysis/test/easym6A/mapping
+stringtie_out_dir	~/analysis/test/easym6A/assembly_quant
+chrom_size	~/software/bedtools-2.27.1/genomes/hg38.nopatch.chrom.sizes
+transcriptome_size	2.2e8
+gtf_file	~/annotations/gencodev27/gencode.v27.annotation.gtf
+bed12_file	~/annotations/gencodev27/gencode.v27.annotation.bed12
+peak_out_dir	~/analysis/test/easym6A/peak_calling
+genome_fasta_file	~/genomes/human/GRCh38/chroms/genome.fa
