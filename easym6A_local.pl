@@ -1315,7 +1315,7 @@ samtools index \$hisat2_out_bam_control_ip_minus
 samtools index \$hisat2_out_bam_treatment_input_plus
 samtools index \$hisat2_out_bam_treatment_input_minus
 samtools index \$hisat2_out_bam_treatment_ip_plus
-samtools index \$hisat2_out_bam_treatment_ip_minu
+samtools index \$hisat2_out_bam_treatment_ip_minus
 wait
 ";
 			$peak_calling_3peakSuite_divbam_rm="
