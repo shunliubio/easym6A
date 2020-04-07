@@ -1,6 +1,6 @@
-# easym6A: Process m6A/MeRIP-seq data in single or batch job mode
+# easym6A: Process m6A/MeRIP-seq data in a single or batch job mode
 
-[![release](https://img.shields.io/badge/release-v1.0-orange.svg)](https://img.shields.io/badge/release-v1.0-orange.svg)
+[![release](https://img.shields.io/badge/release-v1.0.0-orange.svg)](https://img.shields.io/badge/release-v1.0.0-orange.svg)
 [![license](https://img.shields.io/badge/license-GPLv3-green.svg)](https://img.shields.io/badge/license-GPLv3-green.svg)
 
 easym6A creates a bash script to process m6A/MeRIP-seq data from adapter trimming to peak calling. It can also serve as a pipeline for RNA-seq data.
