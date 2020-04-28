@@ -288,4 +288,5 @@ dup <- F
 ### 4. Citation
 
 If you use **easym6A** in published research, please cite:
-Liu, S., Zhu, A., He, C., Chen M.. REPIC: a database for exploring the *N*^6^-methyladenosine methylome. Genome Biol **21**, 100 (2020). [https://doi.org/10.1186/s13059-020-02012-4](https://doi.org/10.1186/s13059-020-02012-4)
+
+Liu, S., Zhu, A., He, C., Chen M.. REPIC: a database for exploring the *N*<sup>6</sup>-methyladenosine methylome. Genome Biol **21**, 100 (2020). [https://doi.org/10.1186/s13059-020-02012-4](https://doi.org/10.1186/s13059-020-02012-4)
