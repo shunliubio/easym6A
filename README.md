@@ -285,3 +285,7 @@ dup <- F
 
 `easym6A_local.pl` is used for local servers without Slurm installation. It calls `nohup` to run the data analysis in the background.
 
+### 4. Citation
+
+If you use **easym6A** in published research, please cite:
+Liu, S., Zhu, A., He, C., Chen M.. REPIC: a database for exploring the *N*^6^-methyladenosine methylome. Genome Biol **21**, 100 (2020). [https://doi.org/10.1186/s13059-020-02012-4](https://doi.org/10.1186/s13059-020-02012-4)
